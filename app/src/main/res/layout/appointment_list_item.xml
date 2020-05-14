@@ -41,8 +41,6 @@
             android:textStyle="bold"
              />
 
-
-
         <TextView
             android:text="doc name"
             android:id="@+id/doctor_text_view"
