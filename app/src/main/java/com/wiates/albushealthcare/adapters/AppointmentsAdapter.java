@@ -39,7 +39,7 @@ public class AppointmentsAdapter extends BaseAdapter {
 
                     Appointment appointment = dataSnapshot1.getValue(Appointment.class);
                     temp.add(appointment);
-                    Log.e("Tag",appointment.doctorName);
+
 
                 }
 
@@ -97,8 +97,5 @@ public class AppointmentsAdapter extends BaseAdapter {
         return convertView;
     }
 
-    public void UpdateAdapter(){
-        /*AppointmentList = getAppointmentList();
-        this.notifyDataSetChanged();*/
-    }
+
 }

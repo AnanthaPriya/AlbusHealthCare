@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import com.wiates.albushealthcare.adapters.AppointmentsAdapter;
 
@@ -42,11 +43,9 @@ public class AppointMentsDashboardActivity extends AppCompatActivity {
     protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
         if(resultCode == RESULT_OK){
-            UpdateTheAdapter();
+            Toast.makeText(this,"Appointmet Added",Toast.LENGTH_SHORT).show();
         }
     }
 
-    private void UpdateTheAdapter() {
-        this.appointmentsAdapter.UpdateAdapter();
-    }
+
 }

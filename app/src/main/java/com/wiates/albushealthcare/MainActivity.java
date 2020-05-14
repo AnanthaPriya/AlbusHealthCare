@@ -77,13 +77,12 @@ public class MainActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
 
-                            Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                            Intent intent = new Intent(MainActivity.this, AppointMentsDashboardActivity.class);
                             startActivity(intent);
                             finish();
                         }
                         else {
                             Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-
                         }
                     }
                 });

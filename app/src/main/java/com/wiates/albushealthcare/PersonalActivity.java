@@ -38,8 +38,7 @@ public class PersonalActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 addItem();
-                Intent intent = new Intent(PersonalActivity.this, AppointMentsDashboardActivity.class);
-                startActivity(intent);
+
             }
         });
     }
@@ -53,11 +52,20 @@ public class PersonalActivity extends AppCompatActivity {
 
         String blood = sblood.getText().toString();
 
-        if (!TextUtils.isEmpty(name)) {
+        if (!name.isEmpty()
+            && !age.isEmpty()
+            && !gender.isEmpty()
+            && !weight.isEmpty()
+            && !height.isEmpty()
+            && !blood.isEmpty()
+        ) {
             String id = mDatabaseReference.push().getKey();
             AddItem item = new AddItem(name,age,gender,weight,height,blood);
             mDatabaseReference.child(FirebaseAuth.getInstance().getUid()).child(id).setValue(item);
             Toast.makeText(this, "Details added successfully!", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(PersonalActivity.this, AppointMentsDashboardActivity.class);
+            startActivity(intent);
+            finish();
         } else {
             Toast.makeText(this, "Enter the details", Toast.LENGTH_SHORT).show();
         }

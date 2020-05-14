@@ -27,7 +27,7 @@ ImageView img;
                         startActivity(dsp);
                         finish();
             }
-        }, 4000);
+        }, 2000);
 
     }
 }

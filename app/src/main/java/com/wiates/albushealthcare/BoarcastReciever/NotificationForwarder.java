@@ -23,7 +23,7 @@ public class NotificationForwarder extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
-        Log.e("NOTFICATION FROWARDER","WORKING");
+
         int id = intent.getIntExtra("ID",5);
         createNotificationChannel(context,intent);
         showLoggedInNotificatoin(id);

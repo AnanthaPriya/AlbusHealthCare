@@ -60,8 +60,6 @@ public class CreateAppointment extends AppCompatActivity {
         time = findViewById(R.id.time);
         submit = findViewById(R.id.add_appointment_button);
 
-
-
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -128,26 +126,22 @@ public class CreateAppointment extends AppCompatActivity {
             finish();
         }
 
-
-
     }
 
     private void setUpAlarmService(Appointment appointment) {
-        // do The Boardcast .
+
         Intent myIntent = new Intent(this, NotificationForwarder.class);
         myIntent.putExtra("ID",appointment.iD);
         myIntent.putExtra("DOCTOR_NAME",appointment.doctorName);
         myIntent.putExtra("PHONE",appointment.phoneNumber);
 
         Calendar calandar = Calendar.getInstance();
-        calandar.set(appointment.year,appointment.month,appointment.day,appointment.hour,appointment.minutes);
-        Log.e("SEconds",""+calandar.getTimeInMillis());
+        calandar.set(appointment.year,appointment.month-1,appointment.day,appointment.hour,appointment.minutes,0);
 
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
-                0, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+        0, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
-        Log.e("APP","THE BOARDCAST HAS BEEN SET UP");
         alarm.setExact(AlarmManager.RTC_WAKEUP,calandar.getTimeInMillis(),pendingIntent);
     }
 }
