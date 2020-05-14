@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".ViewDetailsActivity"></activity>
+        <activity android:name=".PersonalActivity"></activity>
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".HealthRecordActivity" />
         <activity android:name=".RegistrationActivity" />

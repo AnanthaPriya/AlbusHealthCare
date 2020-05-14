@@ -76,7 +76,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void continueToHeathActivity() {
-        Intent i = new Intent(this,HealthRecordActivity.class);
+        Intent i = new Intent(this,PersonalActivity.class);
         startActivity(i);
     }
 

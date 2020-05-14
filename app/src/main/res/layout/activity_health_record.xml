@@ -5,81 +5,151 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:layout_gravity="center"
-    android:gravity="center"
     tools:context=".HealthRecordActivity">
-    <ScrollView
+    <RadioGroup xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" >
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:orientation="vertical"
-            android:layout_height="match_parent" >
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
         <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Your Health Records"
+            android:text="Health Records"
             android:textAlignment="center"
             android:layout_gravity="center"
             android:textSize="20dp"/>
-        <EditText
+
+        <TextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
-            android:id="@+id/name"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Age"
-            android:id="@+id/age"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Gender"
-            android:id="@+id/gender"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Weight"
-            android:id="@+id/weight"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Height"
-            android:id="@+id/height"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Doctor Name"
-            android:id="@+id/dn"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Your Problem ?"
-            android:id="@+id/yp"
-            android:layout_margin="20dp"
-            android:inputType="textCapCharacters"/>
-        <Button
-            android:id="@+id/submit"
+            android:text="Any major Surgeries"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+
+        <RadioButton android:id="@+id/a1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="20dp"
-            android:text="Submit" />
+            android:text="YES"
+            android:onClick="onRadioButtonClicked"/>
+
+        <RadioButton android:id="@+id/a2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:onClick="onRadioButtonClicked"/>
 
 
-        </LinearLayout>
 
-    </ScrollView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Any Allergies"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+
+
+    <RadioButton android:id="@+id/b1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:onClick="onRadioButtonClicked"/>
+    <RadioButton android:id="@+id/b2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:onClick="onRadioButtonClicked"/>
+
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Any history of family illness"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+
+
+    <RadioButton android:id="@+id/c1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:onClick="onRadioButtonClicked"/>
+    <RadioButton android:id="@+id/c2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:onClick="onRadioButtonClicked"/>
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Having Eye Power"
+        android:layout_gravity="center"
+        android:textSize="20dp"/>
+
+
+    <RadioButton android:id="@+id/d1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="YES"
+        android:onClick="onRadioButtonClicked"/>
+
+    <RadioButton android:id="@+id/d2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="NO"
+        android:onClick="onRadioButtonClicked"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Having Depression"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+
+        <RadioButton android:id="@+id/e1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YES"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/e2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:onClick="onRadioButtonClicked"/>
+
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Having Anxiety"
+            android:layout_gravity="center"
+            android:textSize="20dp"/>
+
+
+        <RadioButton android:id="@+id/f1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="YES"
+            android:onClick="onRadioButtonClicked"/>
+        <RadioButton android:id="@+id/f2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="NO"
+            android:onClick="onRadioButtonClicked"/>
+
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/submit"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Submit" />
+
+
+
 </LinearLayout>

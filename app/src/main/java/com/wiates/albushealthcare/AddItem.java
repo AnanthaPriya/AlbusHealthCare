@@ -50,11 +50,11 @@ class AddItem {
     }
 
     public String getYp() {
-        return yp;
+        return blood;
     }
 
     public void setYp(String yp) {
-        this.yp = yp;
+        this.blood = yp;
     }
 
     String name;
@@ -63,7 +63,7 @@ class AddItem {
     String weight;
     String height;
     String dn;
-    String yp;
+    String blood;
 
     public AddItem(String name, String age, String gender, String weight, String height, String dn, String yp) {
         this.name = name;
@@ -72,6 +72,6 @@ class AddItem {
         this.weight = weight;
         this.height = height;
         this.dn = dn;
-        this.yp = yp;
+        this.blood = yp;
     }
 }
