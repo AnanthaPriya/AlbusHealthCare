@@ -15,6 +15,9 @@
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
         <activity android:name=".PersonalActivity"></activity>
+        <activity android:name=".CreateAppointment" />
+        <activity android:name=".AppointMentsDashboardActivity" />
+        <activity android:name=".ViewDetailsActivity" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".HealthRecordActivity" />
         <activity android:name=".RegistrationActivity" />

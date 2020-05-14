@@ -20,4 +20,5 @@
     <string name="btn_back" />
     <string name="lbl_forget_password" />
     <string name="btn_reset_password" />
+    <string name="doctorname">DoctorName</string>
 </resources>

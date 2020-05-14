@@ -1,6 +1,6 @@
 package com.wiates.albushealthcare;
 
-class AddItem {
+public class AddItem {
     public String getName() {
         return name;
     }
