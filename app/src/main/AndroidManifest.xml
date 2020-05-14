@@ -17,11 +17,11 @@
         <activity android:name=".PersonalActivity"></activity>
         <activity android:name=".CreateAppointment" />
         <activity android:name=".AppointMentsDashboardActivity" />
-        <activity android:name=".SplashScreenActivity" />
+        <activity android:name=".MainActivity" />
         <activity android:name=".HealthRecordActivity" />
         <activity android:name=".RegistrationActivity" />
         <activity android:name=".LoginActivity" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

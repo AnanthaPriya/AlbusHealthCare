@@ -1,6 +1,14 @@
 package com.wiates.albushealthcare;
 
 public class AddItem {
+
+    String name;
+    String age;
+    String gender;
+    String weight;
+    String height;
+    String blood;
+
     public String getName() {
         return name;
     }
@@ -41,37 +49,21 @@ public class AddItem {
         this.height = height;
     }
 
-    public String getDn() {
-        return dn;
-    }
-
-    public void setDn(String dn) {
-        this.dn = dn;
-    }
-
-    public String getYp() {
+    public String getBlood() {
         return blood;
     }
 
-    public void setYp(String yp) {
-        this.blood = yp;
+    public void setBlood(String blood) {
+        this.blood = blood;
     }
 
-    String name;
-    String age;
-    String gender;
-    String weight;
-    String height;
-    String dn;
-    String blood;
-
-    public AddItem(String name, String age, String gender, String weight, String height, String dn, String yp) {
+    public AddItem(String name, String age, String gender, String weight, String height, String blood) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.weight = weight;
         this.height = height;
-        this.dn = dn;
-        this.blood = yp;
+
+        this.blood = blood;
     }
 }

@@ -1,48 +1,70 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
+    android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <TextView
-        android:id="@+id/appointment_date_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAlignment="center"
-        android:text="Date"
-        android:layout_marginHorizontal="35dp"
-        android:layout_marginBottom="10dp"
-        android:textSize="30sp"
-        android:textStyle="bold"
-         />
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:layout_margin="5dp"
+        android:layout_height="wrap_content" >
 
-    <TextView
-        android:text="Date"
-        android:id="@+id/appointment_time_text_view"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:textAlignment="center"
-        android:layout_marginBottom="10dp"
-        android:textSize="20sp" />
+        <TextView
+            android:id="@+id/appointment_time_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="00:00"
+            android:layout_margin="3dp"
+            android:textColor="@color/bluefav"
+            android:textAlignment="center"
+            android:textSize="20sp" />
 
-    <TextView
-        android:text="Date"
-        android:id="@+id/doctor_text_view"
-        android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="35dp"
-        android:textSize="20sp" />
+    </LinearLayout>
 
-    <TextView
-        android:text="Date"
-        android:id="@+id/doctor_phone_number"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:textAlignment="center"
-        android:layout_marginHorizontal="10dp"
-        android:layout_height="wrap_content"
-        android:textSize="15sp" />
+        android:orientation="vertical"
+        android:layout_height="wrap_content" >
+
+        <TextView
+            android:id="@+id/appointment_date_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:text="Date"
+            android:textColor="@color/bluefav"
+            android:layout_margin="5dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+             />
+
+
+
+        <TextView
+            android:text="doc name"
+            android:id="@+id/doctor_text_view"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="@color/bluefav"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textSize="17sp" />
+
+        <TextView
+            android:text="phone"
+            android:id="@+id/doctor_phone_number"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:textColor="@color/bluefav"
+            android:layout_margin="5dp"
+            android:layout_height="wrap_content"
+            android:textSize="15sp" />
+
+    </LinearLayout>
 
 </LinearLayout>
+
+

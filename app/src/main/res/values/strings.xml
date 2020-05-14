@@ -20,8 +20,9 @@
     <string name="btn_back" />
     <string name="lbl_forget_password" />
     <string name="btn_reset_password" />
-    <string name="doctorname">DoctorName</string>
-    <string name="PhoneNumber">Contact no</string>
+    <string name="doctorname">Doctor Name</string>
+    <string name="PhoneNumber">Contact No</string>
     <string name="channel_name">albus</string>
     <string name="channel_description">" percival wulfric brian dumbledore"</string>
+    <string name="albus_health_care">Albus Health Care</string>
 </resources>

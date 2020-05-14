@@ -19,18 +19,18 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
-    Button registerBtn, loginBtn;
 
     private EditText emailTV, passwordTV;
     private Button loginBt;
-    private ProgressBar progressBar;
+    private Button sighupp;
+
 
     private FirebaseAuth mAuth;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initializeViews();
+
 
         if(FirebaseAuth.getInstance().getCurrentUser() != null){
             FirebaseAuth.getInstance().signOut();
@@ -40,16 +40,22 @@ public class MainActivity extends AppCompatActivity {
 
         initializeUI();
 
-        loginBtn.setOnClickListener(new View.OnClickListener() {
+        loginBt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 loginUserAccount();
             }
         });
+
+        sighupp.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                registerNewUser();
+            }
+        });
     }
 
     private void loginUserAccount() {
-        progressBar.setVisibility(View.VISIBLE);
 
         String email, password;
         email = emailTV.getText().toString();
@@ -70,53 +76,59 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             Toast.makeText(getApplicationContext(), "Login successful!", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
 
-                            continueToHeathActivity();
+                            Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                            startActivity(intent);
+                            finish();
                         }
                         else {
                             Toast.makeText(getApplicationContext(), "Login failed! Please try again later", Toast.LENGTH_LONG).show();
-                            progressBar.setVisibility(View.GONE);
+
                         }
                     }
                 });
     }
 
-    private void continueToHeathActivity() {
-        Intent i = new Intent(this,PersonalActivity.class);
-        startActivity(i);
+    private void registerNewUser() {
+        String email, password;
+        email = emailTV.getText().toString();
+        password = passwordTV.getText().toString();
+
+        if (TextUtils.isEmpty(email)) {
+            Toast.makeText(getApplicationContext(), "Please enter email...", Toast.LENGTH_LONG).show();
+            return;
+        }
+        if (TextUtils.isEmpty(password)) {
+            Toast.makeText(getApplicationContext(), "Please enter password!", Toast.LENGTH_LONG).show();
+            return;
+        }
+
+        mAuth.createUserWithEmailAndPassword(email, password)
+                .addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            Toast.makeText(getApplicationContext(), "Registration successful!", Toast.LENGTH_LONG).show();
+
+                            Intent intent = new Intent(MainActivity.this, PersonalActivity.class);
+                            startActivity(intent);
+                            finish();
+                        }
+                        else {
+                            Toast.makeText(getApplicationContext(), "Registration failed! Please try again later", Toast.LENGTH_LONG).show();
+
+                        }
+                    }
+                });
     }
+
+
 
     private void initializeUI() {
         emailTV = findViewById(R.id.email);
         passwordTV = findViewById(R.id.password);
-
-        loginBtn = findViewById(R.id.login);
-        progressBar = findViewById(R.id.progressBar);
-
-        registerBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent i = new Intent(MainActivity.this,RegistrationActivity.class);
-                startActivity(i);
-            }
-        });
-        loginBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                continuewToHealthRecordACtivity();
-            }
-        });
+        loginBt = findViewById(R.id.loginn);
+        sighupp = findViewById(R.id.signupp);
     }
 
-    private void continuewToHealthRecordACtivity() {
-        Intent i = new Intent(this, HealthRecordActivity.class);
-        startActivity(i);
-
-    }
-
-    private void initializeViews() {
-        registerBtn = findViewById(R.id.register);
-        loginBt = findViewById(R.id.login);
-    }
 }

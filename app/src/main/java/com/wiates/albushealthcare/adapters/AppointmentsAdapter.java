@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -29,7 +30,7 @@ public class AppointmentsAdapter extends BaseAdapter {
     public AppointmentsAdapter(Context context) {
         this.context = context;
         AppointmentList = getAppointmentList();
-        ref = FirebaseDatabase.getInstance().getReference("appointments");
+        ref = FirebaseDatabase.getInstance().getReference("appointments/"+FirebaseAuth.getInstance().getUid());
         ref.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

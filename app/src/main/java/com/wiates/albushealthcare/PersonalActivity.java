@@ -11,11 +11,12 @@ import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class PersonalActivity extends AppCompatActivity {
-    EditText sname,sage,sgender,sweight,sheight,sdn,syp;
+    EditText sname,sage,sgender,sweight,sheight,sblood;
     Button submit;
     DatabaseReference mDatabaseReference;
     @Override
@@ -30,8 +31,8 @@ public class PersonalActivity extends AppCompatActivity {
         sgender = findViewById(R.id.gender);
         sweight = findViewById(R.id.weight);
         sheight = findViewById(R.id.height);
-        sdn = findViewById(R.id.dn);
-        syp = findViewById(R.id.yp);
+
+        sblood = findViewById(R.id.blood);
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,13 +50,13 @@ public class PersonalActivity extends AppCompatActivity {
         String gender = sgender.getText().toString();
         String weight= sweight.getText().toString();
         String height= sheight.getText().toString();
-        String dm= sdn.getText().toString();
-        String yp = syp.getText().toString();
+
+        String blood = sblood.getText().toString();
 
         if (!TextUtils.isEmpty(name)) {
             String id = mDatabaseReference.push().getKey();
-            AddItem item = new AddItem(name,age,gender,weight,height,dm,yp);
-            mDatabaseReference.child(id).setValue(item);
+            AddItem item = new AddItem(name,age,gender,weight,height,blood);
+            mDatabaseReference.child(FirebaseAuth.getInstance().getUid()).child(id).setValue(item);
             Toast.makeText(this, "Details added successfully!", Toast.LENGTH_SHORT).show();
         } else {
             Toast.makeText(this, "Enter the details", Toast.LENGTH_SHORT).show();

@@ -20,6 +20,7 @@
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+
             />
 
     </com.google.android.material.textfield.TextInputLayout>
@@ -28,12 +29,14 @@
         android:id="@+id/doctor_phone_number_edit_text"
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
+
         android:layout_height="wrap_content"
         android:hint="@string/PhoneNumber"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
+
             android:layout_height="wrap_content"
             />
 
@@ -44,7 +47,7 @@
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:textAlignment="center"
-        android:hint="tap to Set Date"
+        android:hint="Tap To Set Date"
         android:textSize="24dp"
 
         android:layout_height="wrap_content" />
@@ -53,17 +56,23 @@
         android:id="@+id/time"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:hint="tap to set Time"
+        android:hint="Tap To Set Time"
         android:textAlignment="center"
         android:textSize="24dp"
         android:layout_height="wrap_content" />
 
-    <Button
+
+
+        <Button
         android:id="@+id/add_appointment_button"
         android:layout_marginTop="20dp"
+        android:textColor="#fff"
+        android:layout_width="300dp"
+        android:layout_height="60dp"
         android:layout_gravity="center"
-        android:layout_width="wrap_content"
-        android:text="Add Appointment"
-        android:layout_height="wrap_content" />
+        android:text="Add appointment"
+        android:background="@drawable/button"
+        tools:ignore="DuplicateIds"
+         />
 
 </LinearLayout>

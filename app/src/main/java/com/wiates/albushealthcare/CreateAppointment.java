@@ -21,6 +21,7 @@ import android.widget.TimePicker;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.wiates.albushealthcare.BoarcastReciever.NotificationForwarder;
@@ -119,7 +120,7 @@ public class CreateAppointment extends AppCompatActivity {
             && appointment.month != 0
             && appointment.day != 0
         ){
-            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("appointments");
+            DatabaseReference ref = FirebaseDatabase.getInstance().getReference("appointments/"+FirebaseAuth.getInstance().getUid());
             String id = ref.push().getKey();
             ref.child(id).setValue(appointment);
             setUpAlarmService(appointment);

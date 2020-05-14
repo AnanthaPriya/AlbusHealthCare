@@ -18,78 +18,113 @@
             android:layout_height="match_parent" >
             <TextView
                 android:layout_width="match_parent"
+                android:layout_marginTop="10dp"
+                android:textStyle="bold"
                 android:layout_height="wrap_content"
-                android:text="Your Personal Records"
+                android:text="Enter Your Personal Records"
+                android:textColor="#2CA7E0"
                 android:textAlignment="center"
                 android:layout_gravity="center"
                 android:textSize="20dp"/>
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Name"
                 android:id="@+id/name"
-                android:layout_margin="20dp"
-                android:inputType="textCapCharacters"/>
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Name"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+                />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Age"
                 android:id="@+id/age"
-                android:layout_margin="20dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Age"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+            />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Gender"
                 android:id="@+id/gender"
-                android:layout_margin="20dp"
-                android:inputType="textCapCharacters"/>
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Gender"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+                />
+
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Weight"
                 android:id="@+id/weight"
-                android:layout_margin="20dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Weight"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+                />
 
             <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Height"
                 android:id="@+id/height"
-                android:layout_margin="20dp"
-                android:inputType="number"/>
+                android:inputType="number"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Height"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+                />
 
             <EditText
-                android:layout_width="match_parent"
+                android:id="@+id/blood"
+                android:layout_width="300dp"
                 android:layout_height="wrap_content"
-                android:hint="Doctor Name"
-                android:id="@+id/dn"
-                android:layout_margin="20dp"
-                android:inputType="textCapCharacters"/>
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="your Problem"
-                android:id="@+id/yp"
-                android:layout_margin="20dp"
-                android:inputType="textCapCharacters"/>
+                android:textColorHint="#2CA7E0"
+                android:textAlignment="center"
+                android:hint="Blood Group"
+                android:layout_gravity="center"
+                android:drawablePadding="10dp"
+                android:layout_marginTop="30dp"
+                android:background="@drawable/edit"
+                android:padding="10dp"
+                />
 
             <Button
                 android:id="@+id/submit"
-                android:layout_gravity="center_horizontal"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
-                android:text="Submit" />
-
-
+                android:textColor="#fff"
+                android:layout_width="200dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:text="Submit"
+                android:background="@drawable/button"
+                tools:ignore="DuplicateIds" />
         </LinearLayout>
-
     </ScrollView>
 </LinearLayout>

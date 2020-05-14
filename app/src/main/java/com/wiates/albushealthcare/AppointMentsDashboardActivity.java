@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.wiates.albushealthcare.adapters.AppointmentsAdapter;
@@ -15,7 +16,7 @@ public class AppointMentsDashboardActivity extends AppCompatActivity {
 
     private ListView appointments_ListView;
     private AppointmentsAdapter appointmentsAdapter;
-    private ImageButton addAppointments;
+    private LinearLayout addAppointments;
     private final int CREATE_APPOINTMENT = 99;
 
     @Override
