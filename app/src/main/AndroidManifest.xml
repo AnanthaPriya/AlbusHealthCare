@@ -17,7 +17,6 @@
         <activity android:name=".PersonalActivity"></activity>
         <activity android:name=".CreateAppointment" />
         <activity android:name=".AppointMentsDashboardActivity" />
-        <activity android:name=".ViewDetailsActivity" />
         <activity android:name=".SplashScreenActivity" />
         <activity android:name=".HealthRecordActivity" />
         <activity android:name=".RegistrationActivity" />
@@ -29,6 +28,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <receiver android:name=".BoarcastReciever.NotificationForwarder" />
     </application>
 
 </manifest>

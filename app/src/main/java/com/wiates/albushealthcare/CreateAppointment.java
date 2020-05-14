@@ -2,24 +2,33 @@ package com.wiates.albushealthcare;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlarmManager;
 import android.app.DatePickerDialog;
+import android.app.PendingIntent;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.CalendarContract;
 import android.provider.ContactsContract;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.TimePicker;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.wiates.albushealthcare.BoarcastReciever.NotificationForwarder;
 import com.wiates.albushealthcare.datamodels.Appointment;
 
 import java.util.Calendar;
+import java.util.Date;
+import java.util.GregorianCalendar;
 import java.util.Random;
 
 public class CreateAppointment extends AppCompatActivity {
@@ -27,8 +36,8 @@ public class CreateAppointment extends AppCompatActivity {
     TextInputLayout doctorName;
     TextInputLayout doctorPhone;
 
-    EditText date;
-    EditText time;
+    TextView date;
+    TextView time;
     Button submit;
 
     Appointment appointment;
@@ -113,7 +122,7 @@ public class CreateAppointment extends AppCompatActivity {
             DatabaseReference ref = FirebaseDatabase.getInstance().getReference("appointments");
             String id = ref.push().getKey();
             ref.child(id).setValue(appointment);
-            setUpAlarmService();
+            setUpAlarmService(appointment);
             setResult(RESULT_OK);
             finish();
         }
@@ -122,7 +131,22 @@ public class CreateAppointment extends AppCompatActivity {
 
     }
 
-    private void setUpAlarmService() {
+    private void setUpAlarmService(Appointment appointment) {
         // do The Boardcast .
+        Intent myIntent = new Intent(this, NotificationForwarder.class);
+        myIntent.putExtra("ID",appointment.iD);
+        myIntent.putExtra("DOCTOR_NAME",appointment.doctorName);
+        myIntent.putExtra("PHONE",appointment.phoneNumber);
+
+        Calendar calandar = Calendar.getInstance();
+        calandar.set(appointment.year,appointment.month,appointment.day,appointment.hour,appointment.minutes);
+        Log.e("SEconds",""+calandar.getTimeInMillis());
+
+        PendingIntent pendingIntent = PendingIntent.getBroadcast(this,
+                0, myIntent, PendingIntent.FLAG_CANCEL_CURRENT);
+
+        AlarmManager alarm = (AlarmManager)getSystemService(ALARM_SERVICE);
+        Log.e("APP","THE BOARDCAST HAS BEEN SET UP");
+        alarm.setExact(AlarmManager.RTC_WAKEUP,calandar.getTimeInMillis(),pendingIntent);
     }
 }

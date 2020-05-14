@@ -9,15 +9,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.RadioButton;
-import android.widget.RadioGroup;
 import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 public class PersonalActivity extends AppCompatActivity {
+    EditText sname,sage,sgender,sweight,sheight,sdn,syp;
     Button submit;
-    Boolean a,b,c,d,e,f;
     DatabaseReference mDatabaseReference;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,49 +25,40 @@ public class PersonalActivity extends AppCompatActivity {
 
         mDatabaseReference = FirebaseDatabase.getInstance().getReference("item");
 
+        sname = findViewById(R.id.name);
+        sage = findViewById(R.id.age);
+        sgender = findViewById(R.id.gender);
+        sweight = findViewById(R.id.weight);
+        sheight = findViewById(R.id.height);
+        sdn = findViewById(R.id.dn);
+        syp = findViewById(R.id.yp);
         submit = findViewById(R.id.submit);
         submit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Intent intent = new Intent(HealthRecordActivity.this, SetRemainderActivity.class);
-                //startActivity(intent);
+                addItem();
+                Intent intent = new Intent(PersonalActivity.this, AppointMentsDashboardActivity.class);
+                startActivity(intent);
             }
-
         });
-
-
     }
-    public void onRadioButtonClicked(View view) {
+    private void addItem () {
 
+        String name = sname.getText().toString();
+        String age = sage.getText().toString();
+        String gender = sgender.getText().toString();
+        String weight= sweight.getText().toString();
+        String height= sheight.getText().toString();
+        String dm= sdn.getText().toString();
+        String yp = syp.getText().toString();
 
-        boolean checked = ((RadioButton) view).isChecked();
-
-        // Check which radio button was clicked
-        switch (view.getId()) {
-            case R.id.a1:
-                a = checked;
-                    break;
-            case R.id.b1:
-                b = checked;
-                    break;
-            case R.id.c1:
-                c = checked;
-                    break;
-
-
-            case R.id.d1:
-                d = checked;
-                    break;
-
-            case R.id.e1:
-                e = checked;
-                    break;
-
-            case R.id.f1:
-                f = checked;
-                    break;
-
-
-
+        if (!TextUtils.isEmpty(name)) {
+            String id = mDatabaseReference.push().getKey();
+            AddItem item = new AddItem(name,age,gender,weight,height,dm,yp);
+            mDatabaseReference.child(id).setValue(item);
+            Toast.makeText(this, "Details added successfully!", Toast.LENGTH_SHORT).show();
+        } else {
+            Toast.makeText(this, "Enter the details", Toast.LENGTH_SHORT).show();
         }
-    }}
+    }
+}

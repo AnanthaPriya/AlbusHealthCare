@@ -29,7 +29,7 @@
         android:layout_width="match_parent"
         android:layout_marginTop="20dp"
         android:layout_height="wrap_content"
-        android:hint="@string/doctorname"
+        android:hint="@string/PhoneNumber"
         style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -39,22 +39,23 @@
 
     </com.google.android.material.textfield.TextInputLayout>
 
-    <EditText
+    <TextView
         android:id="@+id/date"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
         android:textAlignment="center"
-        android:hint="date"
-        android:layout_marginHorizontal="100dp"
+        android:hint="tap to Set Date"
+        android:textSize="24dp"
+
         android:layout_height="wrap_content" />
 
-    <EditText
+    <TextView
         android:id="@+id/time"
         android:layout_marginTop="20dp"
         android:layout_width="match_parent"
-        android:hint="time"
+        android:hint="tap to set Time"
         android:textAlignment="center"
-        android:layout_marginHorizontal="100dp"
+        android:textSize="24dp"
         android:layout_height="wrap_content" />
 
     <Button
