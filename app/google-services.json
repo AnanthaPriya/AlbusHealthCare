@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "493327656216",
+    "firebase_url": "https://albus-health-care-5c7b3.firebaseio.com",
+    "project_id": "albus-health-care-5c7b3",
+    "storage_bucket": "albus-health-care-5c7b3.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:493327656216:android:73ccd055eba261f1316a6d",
+        "android_client_info": {
+          "package_name": "com.wiates.albushealthcare"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "493327656216-2ip6lo8v8suf8jr360bink6gag5gekrg.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.wiates.albushealthcare",
+            "certificate_hash": "20dff1ad8d69e8d305a774b76e01bac18e6a530b"
+          }
+        },
+        {
+          "client_id": "493327656216-7474l656tv173p17s9a03866odb2fgbv.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfReq1MCv2BNIvRqWtJ0pXTU-M-GQLSxc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "493327656216-7474l656tv173p17s9a03866odb2fgbv.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

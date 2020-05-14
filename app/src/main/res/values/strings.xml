@@ -1,0 +1,23 @@
+<resources>
+    <string name="app_name">Albus Health Care</string>
+    <string name="minimum_pass" />
+    <string name="auth_failed" />
+    <string name="hint_email" />
+    <string name="hint_new_email" />
+    <string name="hint_password" />
+    <string name="new_pass" />
+    <string name="btn_change" />
+    <string name="btn_remove" />
+    <string name="change_email" />
+    <string name="send_password_reset_email" />
+    <string name="remove_user" />
+    <string name="btn_sign_out" />
+    <string name="btn_login" />
+    <string name="btn_forget_password" />
+    <string name="btn_link_to_register" />
+    <string name="btn_link_to_login" />
+    <string name="forgot_password_msg" />
+    <string name="btn_back" />
+    <string name="lbl_forget_password" />
+    <string name="btn_reset_password" />
+</resources>
